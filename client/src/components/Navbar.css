@@ -26,12 +26,18 @@
   color: #495057;
   font-size: 20px;
   font-weight: 700;
+  transition: transform 0.3s ease;
 }
 
-.brand-icon {
-  width: 28px;
-  height: 28px;
-  color: #667eea;
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand span {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .navbar-menu {
@@ -55,6 +61,7 @@
 .navbar-item:hover {
   background: rgba(102, 126, 234, 0.1);
   color: #667eea;
+  transform: translateY(-1px);
 }
 
 .navbar-item.active {

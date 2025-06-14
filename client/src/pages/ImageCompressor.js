@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Helmet } from 'react-helmet-async';
 import { Upload, Download, FileImage, AlertCircle } from 'lucide-react';
 import axios from 'axios';
 import AdBanner from '../components/AdBanner';
@@ -92,13 +91,6 @@ const ImageCompressor = () => {
 
   return (
     <div className="container">
-      <Helmet>
-        <title>บีบอัดรูปภาพออนไลน์ฟรี | ลดขนาดไฟล์ ไม่เสียคุณภาพ | Compress Image</title>
-        <meta name="description" content="บีบอัดรูปภาพออนไลน์ฟรี ลดขนาดไฟล์รูป ไม่เสียคุณภาพ รองรับ JPG PNG WebP ปรับระดับคุณภาพได้ ใช้งานง่าย รวดเร็ว ไม่ต้องติดตั้งโปรแกรม" />
-        <meta name="keywords" content="บีบอัดรูป, ลดขนาดไฟล์, compress image, ลดขนาดรูป, บีบอัดไฟล์, ปรับคุณภาพรูป, ฟรี, ออนไลน์" />
-        <link rel="canonical" href="https://your-domain.com/image-compressor" />
-      </Helmet>
-      
       {/* Top Banner Ad */}
       <AdBanner 
         slot="1122334455" 

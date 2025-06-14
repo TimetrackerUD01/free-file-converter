@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Helmet } from 'react-helmet-async';
 import { Upload, Download, FileImage, AlertCircle } from 'lucide-react';
 import axios from 'axios';
 import AdBanner from '../components/AdBanner';
@@ -87,13 +86,6 @@ const ImageConverter = () => {
 
   return (
     <div className="container">
-      <Helmet>
-        <title>แปลงรูปภาพออนไลน์ฟรี | แปลง JPG PNG WebP GIF BMP | ไม่ต้องติดตั้งโปรแกรม</title>
-        <meta name="description" content="แปลงรูปภาพออนไลน์ฟรี รองรับ JPG PNG WebP GIF BMP TIFF ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รวดเร็ว ปลอดภัย แปลงได้ไม่อั้น" />
-        <meta name="keywords" content="แปลงรูป, แปลงรูปภาพ, แปลง jpg, แปลง png, แปลง webp, แปลง gif, แปลง bmp, image converter, ฟรี, ออนไลน์" />
-        <link rel="canonical" href="https://your-domain.com/image-converter" />
-      </Helmet>
-      
       {/* Top Banner Ad */}
       <AdBanner 
         slot="2233445566" 

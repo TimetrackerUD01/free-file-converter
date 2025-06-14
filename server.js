@@ -5,8 +5,6 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 const archiver = require('archiver');
-const https = require('https');
-const http = require('http');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -220,27 +218,6 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// Serve ads.txt for Google AdSense
-app.get('/ads.txt', (req, res) => {
-  res.type('text/plain');
-  res.sendFile(path.join(__dirname, 'client/public', 'ads.txt'));
-});
-
-// Serve robots.txt
-app.get('/robots.txt', (req, res) => {
-  res.type('text/plain');
-  res.send(`User-agent: *
-Allow: /
-
-Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`);
-});
-
-// Serve sitemap.xml
-app.get('/sitemap.xml', (req, res) => {
-  res.type('application/xml');
-  res.sendFile(path.join(__dirname, 'client/public', 'sitemap.xml'));
-});
-
 // Serve React app
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
@@ -268,33 +245,6 @@ setInterval(() => {
   });
 }, 60 * 60 * 1000); // Run every hour
 
-// Keep-alive system to prevent sleeping on free hosting
-const keepAlive = () => {
-  const url = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
-  
-  console.log(`🔄 Keep-alive ping to: ${url}/api/health`);
-  
-  const request = url.startsWith('https') ? https : http;
-  
-  request.get(`${url}/api/health`, (res) => {
-    console.log(`✅ Keep-alive ping successful: ${res.statusCode}`);
-  }).on('error', (err) => {
-    console.log(`❌ Keep-alive ping failed: ${err.message}`);
-  });
-};
-
-// Start keep-alive system only in production
-if (process.env.NODE_ENV === 'production') {
-  console.log('🚀 Starting keep-alive system...');
-  // Ping every 10 minutes (600,000 ms)
-  setInterval(keepAlive, 10 * 60 * 1000);
-  // Initial ping after 1 minute
-  setTimeout(keepAlive, 60 * 1000);
-}
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  if (process.env.NODE_ENV === 'production') {
-    console.log('🔄 Keep-alive system enabled');
-  }
 });
