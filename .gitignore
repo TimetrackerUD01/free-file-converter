@@ -53,4 +53,6 @@ Thumbs.db
 
 # ESLint
 .eslintcache
-node_modules
+
+# Keep-alive (local use only)
+keep-alive.html
