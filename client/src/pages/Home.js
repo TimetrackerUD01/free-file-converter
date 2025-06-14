@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Image, Maximize, Minimize, Zap, Shield, Globe } from 'lucide-react';
 import AdBanner from '../components/AdBanner';
 import AdInFeed from '../components/AdInFeed';
@@ -46,6 +47,13 @@ const Home = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>แปลงไฟล์ฟรี ออนไลน์ | แปลงรูป JPG PNG WebP | ปรับขนาด บีบอัดรูปภาพ</title>
+        <meta name="description" content="เครื่องมือแปลงไฟล์ออนไลน์ฟรี แปลงรูป JPG PNG WebP ปรับขนาดรูปภาพ บีบอัดลดขนาด ใช้งานง่าย รวดเร็ว ปลอดภัย ไม่ต้องสมัครสมาชิก" />
+        <meta name="keywords" content="แปลงไฟล์ฟรี, แปลงรูป, แปลงรูปภาพ, แปลง jpg, แปลง png, ปรับขนาดรูป, บีบอัดรูป, ฟรี, ออนไลน์" />
+        <link rel="canonical" href="https://your-domain.com/" />
+      </Helmet>
+      
       {/* Top Banner Ad */}
       <AdBanner 
         slot="1234567890" 
@@ -63,7 +71,7 @@ const Home = () => {
               WebkitTextFillColor: 'transparent',
               marginBottom: '16px'
             }}>
-              ตัวแปลงไฟล์ฟรีออนไลน์
+              แปลงไฟล์ฟรี ออนไลน์
             </h1>
             <p style={{ 
               fontSize: '1.2rem',
@@ -71,8 +79,8 @@ const Home = () => {
               maxWidth: '600px',
               margin: '0 auto'
             }}>
-              แปลง ปรับขนาด และบีบอัดไฟล์ของคุณออนไลน์ฟรี 
-              ไม่ต้องสมัครสมาชิก ประมวลผลปลอดภัย และใช้งานได้ไม่จำกัด
+              เครื่องมือแปลงไฟล์ออนไลน์ฟรี แปลงรูป JPG PNG WebP ปรับขนาดรูปภาพ บีบอัดลดขนาด 
+              ไม่ต้องติดตั้งโปรแกรม ใช้งานง่าย รวดเร็ว ปลอดภัย ไม่ต้องสมัครสมาชิก
             </p>
           </div>
 

@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { Helmet } from 'react-helmet-async';
 import { Upload, Download, FileImage, AlertCircle } from 'lucide-react';
 import axios from 'axios';
 import AdBanner from '../components/AdBanner';
@@ -93,6 +94,13 @@ const ImageResizer = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>ปรับขนาดรูปภาพออนไลน์ฟรี | ลดขนาดรูป ไม่เสียคุณภาพ | Resize Image</title>
+        <meta name="description" content="ปรับขนาดรูปภาพออนไลน์ฟรี ลดขนาดรูป ปรับความกว้าง ความสูง ไม่เสียคุณภาพ รองรับ JPG PNG WebP ใช้งานง่าย รวดเร็ว ไม่ต้องติดตั้งโปรแกรม" />
+        <meta name="keywords" content="ปรับขนาดรูป, ลดขนาดรูป, resize image, ปรับความกว้างรูป, ปรับความสูงรูป, ย่อขนาดรูป, ฟรี, ออนไลน์" />
+        <link rel="canonical" href="https://your-domain.com/image-resizer" />
+      </Helmet>
+      
       {/* Top Banner Ad */}
       <AdBanner 
         slot="7788990011" 
