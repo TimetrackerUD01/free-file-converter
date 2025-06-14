@@ -1,0 +1,8 @@
+# ads.txt file for Google AdSense
+# This file helps prevent ad fraud and ensures ad revenue goes to the rightful owner
+
+# Google AdSense
+google.com, pub-1797172064583364, DIRECT, f08c47fec0942fa0
+
+# Additional ad networks (add as needed)
+# Format: domain, publisher_id, relationship, certification_authority_id
